@@ -1,0 +1,105 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Oculto por defecto en móviles */
+    width: 250px;
+    height: 100vh;
+    background: linear-gradient(180deg, #444, #222);
+    color: white;
+    padding: 20px 10px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.sidebar.open {
+    left: 0; /* Aparece cuando está abierto */
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    text-align: center;
+    color: #ffcc00;
+    margin-bottom: 20px;
+    display: none; /* Oculto por defecto en móviles */
+}
+
+.sidebar.open h2 {
+    display: block; /* Muestra el título cuando el sidebar está desplegado */
+}
+
+
+.sidebar ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar ul li {
+    text-align: center;
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #f1f1f1;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a svg {
+    font-size: 24px; /* Tamaño de los íconos */
+}
+
+.sidebar ul li a span {
+    display: none; /* Oculta el texto en móviles */
+}
+
+.sidebar.open ul li a span {
+    display: inline; /* Muestra el texto cuando el sidebar está desplegado */
+}
+
+.sidebar ul li a:hover {
+    background-color: #575757;
+    color: #ffcc00;
+}
+
+.menu-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+@media (min-width: 768px) {
+    .sidebar {
+        left: 0; /* Sidebar fijo en pantallas grandes */
+        width: 250px;
+    }
+
+    .menu-toggle {
+        display: none; /* Oculta el botón toggle en pantallas grandes */
+    }
+
+    .sidebar h2 {
+        display: block; /* Muestra el título en pantallas grandes */
+    }
+
+    .sidebar ul li a span {
+        display: inline; /* Muestra el texto por defecto en pantallas grandes */
+    }
+}

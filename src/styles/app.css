@@ -1,0 +1,38 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+    background-color: #f4f4f9;
+    color: #333;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app {
+    display: flex;
+    height: 100vh; /* Altura completa de la ventana */
+    overflow: hidden;
+}
+
+.content {
+    flex-grow: 1; /* Ocupa el espacio restante */
+    padding: 20px;
+    margin-left: 0; /* Inicialmente sin margen (sidebar cerrado) */
+    transition: margin-left 0.3s ease;
+}
+
+/* Ajusta el contenido cuando el sidebar está abierto */
+.sidebar.open ~ .content {
+    margin-left: 250px; /* Empuja el contenido al ancho del sidebar */
+}
